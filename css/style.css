@@ -16,7 +16,8 @@
     --color-border: #2a2a2a;
     --color-overlay: rgba(0, 0, 0, 0.85);
 
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-display: 'Montserrat', sans-serif;
     --font-body: 'Space Grotesk', -apple-system, sans-serif;
 
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,13 +94,23 @@ img {
 }
 
 .logo {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
 }
 
-.logo span {
+.logo-first {
+    font-family: var(--font-script);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.logo-last {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
     color: var(--color-accent);
 }
 
@@ -215,8 +226,6 @@ img {
 }
 
 .hero-title {
-    font-family: var(--font-display);
-    font-weight: 400;
     margin-bottom: 1.5rem;
 }
 
@@ -225,15 +234,20 @@ img {
     overflow: hidden;
 }
 
-.hero-title .line-1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    letter-spacing: -0.02em;
+.hero-title .name-first {
+    font-family: var(--font-script);
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--color-text);
     animation: fadeSlideUp 0.8s var(--ease-smooth) 0.2s both;
 }
 
-.hero-title .line-2 {
-    font-size: clamp(3rem, 10vw, 6.5rem);
-    font-style: italic;
+.hero-title .name-last {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
     color: var(--color-accent);
     animation: fadeSlideUp 0.8s var(--ease-smooth) 0.4s both;
 }
