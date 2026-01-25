@@ -1,106 +1,147 @@
 /**
- * CONFIGURATION FILE
- * ==================
+ * PORTFOLIO CONFIGURATION
+ * =======================
  *
- * Add your albums and photos below.
- * Images are stored in the /images/albums/ folder.
+ * HOW TO ADD YOUR PHOTOS:
  *
- * Image naming convention:
- * - Medium size (grid): 800px wide, suffix _m.jpg
- * - Large size (lightbox): 1920px wide, suffix _l.jpg
+ * 1. Export photos from Lightroom Classic:
+ *    - Select photos in a collection
+ *    - File > Export
+ *    - Export to: images/albums/[collection-name]/
+ *    - Create two sizes:
+ *      - Medium (for grid): 1200px long edge, quality 80%
+ *      - Large (for lightbox): 2400px long edge, quality 85%
+ *    - Name files: photo1.jpg, photo2.jpg, etc.
  *
- * Example folder structure:
- * /images/albums/
- *   landscapes/
- *     cover.jpg
- *     photo1_m.jpg
- *     photo1_l.jpg
- *     photo2_m.jpg
- *     photo2_l.jpg
+ * 2. Add the collection below following the example format
+ *
+ * 3. Commit and push to GitHub
  */
 
 const CONFIG = {
-    // Your name (displayed on the site)
-    photographerName: 'Andreas Lorenz',
-
-    // ===================
-    // FLICKR SETTINGS (disabled - using local images)
-    // ===================
-    flickr: {
-        enabled: false,
-        username: '',
-        userId: '',
-        photoCount: 20
-    },
-
-    // ===================
-    // YOUR PHOTO ALBUMS
-    // ===================
-    // Add your albums here. Each album needs:
-    // - id: unique identifier
-    // - title: display name
-    // - coverImage: path to cover image
-    // - photos: array of photo objects
-
+    // Your collections/albums
     manualAlbums: [
-        // EXAMPLE ALBUM - Replace with your own!
+        // ============================================
+        // EXAMPLE COLLECTION - Replace with your own!
+        // ============================================
         {
             id: 'landscapes',
             title: 'Landscapes',
             description: 'Nature and scenic photography',
-            coverImage: 'images/albums/landscapes/cover.jpg',
+            // Cover image for the collection card
+            coverImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+            // Photos in this collection
             photos: [
                 {
-                    id: 'landscape-1',
-                    title: 'Mountain Sunrise',
-                    url_medium: 'images/albums/landscapes/photo1_m.jpg',
-                    url_large: 'images/albums/landscapes/photo1_l.jpg'
+                    id: 'l1',
+                    title: 'Mountain Dawn',
+                    url_medium: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85'
                 },
                 {
-                    id: 'landscape-2',
+                    id: 'l2',
                     title: 'Forest Path',
-                    url_medium: 'images/albums/landscapes/photo2_m.jpg',
-                    url_large: 'images/albums/landscapes/photo2_l.jpg'
+                    url_medium: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=85'
+                },
+                {
+                    id: 'l3',
+                    title: 'Ocean Sunset',
+                    url_medium: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85'
+                },
+                {
+                    id: 'l4',
+                    title: 'Desert Dunes',
+                    url_medium: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=85'
                 }
-                // Add more photos here...
             ]
         },
         {
             id: 'portraits',
             title: 'Portraits',
             description: 'People and character studies',
-            coverImage: 'images/albums/portraits/cover.jpg',
+            coverImage: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80',
             photos: [
                 {
-                    id: 'portrait-1',
-                    title: 'Portrait Study',
-                    url_medium: 'images/albums/portraits/photo1_m.jpg',
-                    url_large: 'images/albums/portraits/photo1_l.jpg'
+                    id: 'p1',
+                    title: 'Natural Light',
+                    url_medium: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1920&q=85'
+                },
+                {
+                    id: 'p2',
+                    title: 'Street Portrait',
+                    url_medium: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=85'
+                },
+                {
+                    id: 'p3',
+                    title: 'Golden Hour',
+                    url_medium: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1920&q=85'
                 }
-                // Add more photos here...
+            ]
+        },
+        {
+            id: 'urban',
+            title: 'Urban',
+            description: 'City life and architecture',
+            coverImage: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80',
+            photos: [
+                {
+                    id: 'u1',
+                    title: 'City Lights',
+                    url_medium: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1920&q=85'
+                },
+                {
+                    id: 'u2',
+                    title: 'Architecture',
+                    url_medium: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85'
+                },
+                {
+                    id: 'u3',
+                    title: 'Night Street',
+                    url_medium: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1920&q=85'
+                },
+                {
+                    id: 'u4',
+                    title: 'Reflections',
+                    url_medium: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=85'
+                },
+                {
+                    id: 'u5',
+                    title: 'Subway',
+                    url_medium: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80',
+                    url_large: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1920&q=85'
+                }
             ]
         }
-        // Add more albums by copying the structure above
-    ],
 
-    // ===================
-    // SITE SETTINGS
-    // ===================
-    site: {
-        title: 'Andreas Lorenz Photography',
-        tagline: 'photographer / visual storyteller (& dreamer)',
-        email: 'hello@andreas-lorenz-photography.org',
-
-        // About section text
-        aboutLead: 'Every photograph is a conversation between light and shadow, between what was and what might be.',
-        aboutText: [
-            "I'm Andreas Lorenz, a photographer captivated by the poetry hidden in ordinary moments. My lens seeks the extraordinary within the everyday—the play of morning light through a window, the quiet dignity of weathered hands, the fleeting magic of golden hour.",
-            "Photography, for me, is not just about capturing images. It's about distilling emotions, preserving memories, and telling stories that resonate beyond the frame."
-        ]
-    }
+        // ============================================
+        // ADD YOUR OWN COLLECTIONS BELOW
+        // ============================================
+        // Copy the structure above and replace with your images:
+        /*
+        {
+            id: 'my-collection',
+            title: 'My Collection',
+            description: 'Description here',
+            coverImage: 'images/albums/my-collection/cover.jpg',
+            photos: [
+                {
+                    id: 'my1',
+                    title: 'Photo Title',
+                    url_medium: 'images/albums/my-collection/photo1.jpg',
+                    url_large: 'images/albums/my-collection/photo1_large.jpg'
+                }
+            ]
+        }
+        */
+    ]
 };
-
-// Don't modify below this line
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = CONFIG;
-}

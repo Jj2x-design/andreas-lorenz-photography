@@ -4,175 +4,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Lorenz Photography</title>
+    <meta name="description" content="Photography portfolio of Andreas Lorenz - Visual storytelling through the lens">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Decorative elements -->
-    <div class="deco-circle deco-circle-1"></div>
-    <div class="deco-circle deco-circle-2"></div>
-    <div class="deco-line deco-line-1"></div>
-    <div class="deco-scatter"></div>
-
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-logo">
-            <span class="logo-text">AL</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" data-section="home" class="nav-link active">Home</a></li>
-            <li><a href="#" data-section="work" class="nav-link">Work</a></li>
-            <li><a href="#" data-section="about" class="nav-link">About</a></li>
-            <li><a href="#" data-section="contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo" data-section="home">Andreas <span>Lorenz</span></a>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-section="work">Collections</a></li>
+                <li><a href="#" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="section hero-section active">
+    <section id="home" class="section hero active">
         <div class="hero-content">
-            <div class="hero-title-wrapper">
-                <h1 class="hero-title">
-                    <span class="title-line title-line-1">Andreas</span>
-                    <span class="title-line title-line-2">Lorenz</span>
-                </h1>
-                <div class="hero-subtitle">
-                    <span class="subtitle-text">photographer</span>
-                    <span class="subtitle-divider">/</span>
-                    <span class="subtitle-text">visual storyteller</span>
-                    <span class="subtitle-accent">(& dreamer)</span>
-                </div>
-            </div>
+            <h1 class="hero-title">
+                <span class="line line-1">Andreas</span>
+                <span class="line line-2">Lorenz</span>
+            </h1>
+            <p class="hero-subtitle">Photographer & Visual Storyteller</p>
             <div class="hero-cta">
-                <a href="#" data-section="work" class="cta-link">
-                    <span class="cta-text">View my work</span>
-                    <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <button class="btn" data-section="work">
+                    <span>View Collections</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
-                </a>
+                </button>
             </div>
-        </div>
-        <div class="hero-image-float">
-            <div class="float-frame" id="hero-preview"></div>
         </div>
     </section>
 
-    <!-- Work/Gallery Section -->
-    <section id="work" class="section work-section">
+    <!-- Work / Collections Section -->
+    <section id="work" class="section work">
         <div class="section-header">
-            <h2 class="section-title">
-                <span class="title-num">01</span>
-                <span class="title-text">Selected Work</span>
-            </h2>
-            <p class="section-desc">Moments frozen in time, stories waiting to unfold</p>
+            <p class="section-label">Portfolio</p>
+            <h2 class="section-title">Collections</h2>
         </div>
 
-        <!-- Albums Grid -->
-        <div class="albums-container">
-            <div class="albums-grid" id="albums-grid">
-                <!-- Albums loaded dynamically -->
-                <div class="loading-state">
-                    <div class="loader"></div>
-                    <p>Loading albums...</p>
-                </div>
+        <!-- Collections Grid -->
+        <div class="collections-grid" id="collections-grid">
+            <div class="loading-state">
+                <div class="loader"></div>
+                <p>Loading collections...</p>
             </div>
         </div>
 
-        <!-- Album Photos View (hidden by default) -->
+        <!-- Album View (photos within a collection) -->
         <div class="album-view" id="album-view">
-            <button class="back-btn" id="back-to-albums">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                <span>Back to albums</span>
-            </button>
-            <h3 class="album-title" id="album-title"></h3>
-            <div class="photos-grid" id="photos-grid">
-                <!-- Photos loaded dynamically -->
+            <div class="album-header">
+                <button class="back-btn" id="back-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    <span>Back</span>
+                </button>
+                <h3 class="album-title" id="album-title"></h3>
             </div>
+            <div class="photos-grid" id="photos-grid"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="about-layout">
-            <div class="about-image-col">
-                <div class="about-frame">
-                    <div class="frame-deco"></div>
-                </div>
+    <section id="about" class="section about">
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="images/profile.jpg" alt="Andreas Lorenz" onerror="this.style.display='none'">
             </div>
-            <div class="about-content-col">
-                <h2 class="section-title">
-                    <span class="title-num">02</span>
-                    <span class="title-text">About</span>
-                </h2>
-                <div class="about-text">
-                    <p class="about-lead">Every photograph is a conversation between light and shadow, between what was and what might be.</p>
-                    <p>I'm Andreas Lorenz, a photographer captivated by the poetry hidden in ordinary moments. My lens seeks the extraordinary within the everyday—the play of morning light through a window, the quiet dignity of weathered hands, the fleeting magic of golden hour.</p>
-                    <p>Photography, for me, is not just about capturing images. It's about distilling emotions, preserving memories, and telling stories that resonate beyond the frame.</p>
-                </div>
-                <div class="about-signature">
-                    <span class="sig-text">— Andreas</span>
-                </div>
+            <h2 class="about-name">Andreas Lorenz</h2>
+            <p class="about-role">Photographer</p>
+            <div class="about-bio">
+                <p>Every photograph is a conversation between light and shadow, between what was and what might be.</p>
+                <p>I capture moments that tell stories, seeking the extraordinary within the everyday—the play of morning light, the quiet dignity of a fleeting moment, the magic of golden hour.</p>
             </div>
+            <p class="about-quote">"Photography is the art of frozen time... the ability to store emotion and feelings within a frame."</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section contact">
         <div class="contact-content">
-            <h2 class="section-title contact-title">
-                <span class="title-num">03</span>
-                <span class="title-text">Let's Create</span>
-            </h2>
-            <p class="contact-lead">Have a project in mind? I'd love to hear your story.</p>
-            <div class="contact-links">
-                <a href="mailto:hello@andreas-lorenz-photography.org" class="contact-link email-link">
-                    <span class="link-label">Email</span>
-                    <span class="link-value">hello@andreas-lorenz-photography.org</span>
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-subtitle">Have a project in mind? I'd love to hear from you.</p>
+            <a href="mailto:hello@andreas-lorenz-photography.org" class="contact-email">hello@andreas-lorenz-photography.org</a>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
                 </a>
-            </div>
-            <div class="contact-social">
-                <a href="https://www.flickr.com/photos/YOUR_USERNAME" target="_blank" class="social-link" aria-label="Flickr">
+                <a href="#" class="social-link" aria-label="Flickr">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <circle cx="7" cy="12" r="5"/>
-                        <circle cx="17" cy="12" r="5"/>
+                        <circle cx="7" cy="12" r="4.5"/>
+                        <circle cx="17" cy="12" r="4.5"/>
                     </svg>
                 </a>
             </div>
-        </div>
-        <div class="contact-deco">
-            <span class="deco-text">©2024</span>
         </div>
     </section>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightbox-close">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 6L6 18M6 6l12 12"/>
             </svg>
         </button>
-        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M15 18l-6-6 6-6"/>
             </svg>
         </button>
-        <button class="lightbox-nav lightbox-next" id="lightbox-next">
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18l6-6-6-6"/>
             </svg>
         </button>
         <div class="lightbox-content">
             <img src="" alt="" id="lightbox-img">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Andreas Lorenz Photography. All rights reserved.</p>
+    </footer>
+
     <script src="js/config.js"></script>
-    <script src="js/flickr.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
