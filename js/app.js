@@ -1,17 +1,14 @@
 /**
  * Andreas Lorenz Photography
- * Main Application Script
  */
 
 (function() {
     'use strict';
 
-    // State
     let currentAlbum = null;
     let currentPhotos = [];
     let currentPhotoIndex = 0;
 
-    // DOM Elements
     const elements = {
         themeToggle: document.getElementById('theme-toggle'),
         collectionsGrid: document.getElementById('collections-grid'),
@@ -24,10 +21,11 @@
         lightboxCaption: document.getElementById('lightbox-caption'),
         lightboxClose: document.getElementById('lightbox-close'),
         lightboxPrev: document.getElementById('lightbox-prev'),
-        lightboxNext: document.getElementById('lightbox-next')
+        lightboxNext: document.getElementById('lightbox-next'),
+        collectionsSection: document.querySelector('.collections-section'),
+        hero: document.querySelector('.hero')
     };
 
-    // Initialize
     function init() {
         initTheme();
         initNavigation();
@@ -35,14 +33,10 @@
         loadCollections();
     }
 
-    // ================================
-    // THEME
-    // ================================
+    // Theme
     function initTheme() {
-        // Check for saved theme or default to dark
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
-
         elements.themeToggle?.addEventListener('click', toggleTheme);
     }
 
@@ -53,11 +47,8 @@
         localStorage.setItem('theme', newTheme);
     }
 
-    // ================================
-    // NAVIGATION
-    // ================================
+    // Navigation
     function initNavigation() {
-        // Handle all navigation links and buttons
         document.querySelectorAll('[data-section]').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -66,44 +57,43 @@
             });
         });
 
-        // Back button in album view
         elements.backBtn?.addEventListener('click', showCollections);
     }
 
     function navigateTo(sectionId) {
-        // Hide all sections
         document.querySelectorAll('.section').forEach(section => {
             section.classList.remove('active');
         });
 
-        // Show target section
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.classList.add('active');
         }
 
-        // Update nav links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.toggle('active', link.dataset.section === sectionId);
         });
 
-        // Reset album view when navigating away from work
-        if (sectionId !== 'work') {
+        if (sectionId === 'home') {
             showCollections();
         }
 
-        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ================================
-    // COLLECTIONS / GALLERY
-    // ================================
+    // Encode path for URLs with special characters
+    function encodePath(path) {
+        return path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+    }
+
+    // Collections
     function loadCollections() {
-        const albums = CONFIG.manualAlbums || [];
+        const albums = CONFIG?.manualAlbums || [];
 
         if (albums.length === 0) {
-            showEmptyState();
+            if (elements.collectionsGrid) {
+                elements.collectionsGrid.innerHTML = '<p style="color: var(--color-text-secondary); text-align: center; padding: 2rem;">No collections yet.</p>';
+            }
             return;
         }
 
@@ -113,17 +103,21 @@
     function renderCollections(albums) {
         if (!elements.collectionsGrid) return;
 
-        elements.collectionsGrid.innerHTML = albums.map(album => `
-            <article class="collection-card" data-album-id="${album.id}">
-                <img src="${album.coverImage}" alt="${album.title}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22%3E%3Crect fill=%22%23222%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%22200%22 y=%22250%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22sans-serif%22%3ENo Image%3C/text%3E%3C/svg%3E'">
-                <div class="collection-info">
-                    <h3 class="collection-name">${album.title}</h3>
-                    <p class="collection-count">${album.photos?.length || 0} Photos</p>
-                </div>
-            </article>
-        `).join('');
+        elements.collectionsGrid.innerHTML = albums.map(album => {
+            const coverPath = encodePath(album.coverImage);
+            const photoCount = album.photos?.length || 0;
 
-        // Add click handlers
+            return `
+                <article class="collection-card" data-album-id="${album.id}">
+                    <img src="${coverPath}" alt="${album.title}" loading="lazy">
+                    <div class="collection-info">
+                        <h3 class="collection-name">${album.title}</h3>
+                        <p class="collection-count">${photoCount} Photos</p>
+                    </div>
+                </article>
+            `;
+        }).join('');
+
         elements.collectionsGrid.querySelectorAll('.collection-card').forEach(card => {
             card.addEventListener('click', () => {
                 const albumId = card.dataset.albumId;
@@ -137,20 +131,20 @@
         currentAlbum = album;
         currentPhotos = album.photos || [];
 
-        // Update title
         if (elements.albumTitle) {
             elements.albumTitle.textContent = album.title;
         }
 
-        // Render photos
         if (elements.photosGrid) {
-            elements.photosGrid.innerHTML = currentPhotos.map((photo, index) => `
-                <div class="photo-item" data-index="${index}">
-                    <img src="${photo.url_medium}" alt="${photo.title || ''}" loading="lazy">
-                </div>
-            `).join('');
+            elements.photosGrid.innerHTML = currentPhotos.map((photo, index) => {
+                const imgPath = encodePath(photo.url_medium);
+                return `
+                    <div class="photo-item" data-index="${index}">
+                        <img src="${imgPath}" alt="${photo.title || ''}" loading="lazy">
+                    </div>
+                `;
+            }).join('');
 
-            // Add click handlers for lightbox
             elements.photosGrid.querySelectorAll('.photo-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const index = parseInt(item.dataset.index, 10);
@@ -159,8 +153,9 @@
             });
         }
 
-        // Show album view, hide collections
-        if (elements.collectionsGrid) elements.collectionsGrid.style.display = 'none';
+        // Hide hero and collections, show album view
+        if (elements.hero) elements.hero.style.display = 'none';
+        if (elements.collectionsSection) elements.collectionsSection.style.display = 'none';
         if (elements.albumView) elements.albumView.classList.add('active');
     }
 
@@ -168,52 +163,30 @@
         currentAlbum = null;
         currentPhotos = [];
 
-        if (elements.collectionsGrid) elements.collectionsGrid.style.display = 'grid';
+        if (elements.hero) elements.hero.style.display = 'block';
+        if (elements.collectionsSection) elements.collectionsSection.style.display = 'block';
         if (elements.albumView) elements.albumView.classList.remove('active');
     }
 
-    function showEmptyState() {
-        if (!elements.collectionsGrid) return;
-
-        elements.collectionsGrid.innerHTML = `
-            <div class="loading-state">
-                <p>No collections yet.</p>
-                <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">
-                    Add your photos to the config.js file to get started.
-                </p>
-            </div>
-        `;
-    }
-
-    // ================================
-    // LIGHTBOX
-    // ================================
+    // Lightbox
     function initLightbox() {
         elements.lightboxClose?.addEventListener('click', closeLightbox);
         elements.lightboxPrev?.addEventListener('click', () => navigateLightbox(-1));
         elements.lightboxNext?.addEventListener('click', () => navigateLightbox(1));
 
-        // Close on background click
         elements.lightbox?.addEventListener('click', (e) => {
             if (e.target === elements.lightbox) {
                 closeLightbox();
             }
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (!elements.lightbox?.classList.contains('active')) return;
 
             switch (e.key) {
-                case 'Escape':
-                    closeLightbox();
-                    break;
-                case 'ArrowLeft':
-                    navigateLightbox(-1);
-                    break;
-                case 'ArrowRight':
-                    navigateLightbox(1);
-                    break;
+                case 'Escape': closeLightbox(); break;
+                case 'ArrowLeft': navigateLightbox(-1); break;
+                case 'ArrowRight': navigateLightbox(1); break;
             }
         });
     }
@@ -224,7 +197,8 @@
 
         if (!photo || !elements.lightbox) return;
 
-        elements.lightboxImg.src = photo.url_large || photo.url_medium;
+        const imgPath = encodePath(photo.url_large || photo.url_medium);
+        elements.lightboxImg.src = imgPath;
         elements.lightboxImg.alt = photo.title || 'Photo';
         elements.lightboxCaption.textContent = photo.title || '';
 
@@ -234,22 +208,16 @@
 
     function closeLightbox() {
         if (!elements.lightbox) return;
-
         elements.lightbox.classList.remove('active');
         document.body.style.overflow = '';
     }
 
     function navigateLightbox(direction) {
         let newIndex = currentPhotoIndex + direction;
-
-        // Loop around
         if (newIndex < 0) newIndex = currentPhotos.length - 1;
         if (newIndex >= currentPhotos.length) newIndex = 0;
-
         openLightbox(newIndex);
     }
 
-    // Start the app
     document.addEventListener('DOMContentLoaded', init);
-
 })();

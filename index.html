@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andreas Lorenz Photography</title>
-    <meta name="description" content="Photography portfolio of Andreas Lorenz - Visual storytelling through the lens">
+    <meta name="description" content="Photography portfolio of Andreas Lorenz">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="#" class="logo" data-section="home"><span class="logo-first">Andreas</span> <span class="logo-last">LORENZ</span></a>
+        <a href="#" class="logo" data-section="home">
+            <span class="logo-first">Andreas</span>
+            <span class="logo-last">Lorenz</span>
+        </a>
         <nav class="nav">
             <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#" class="nav-link" data-section="work">Collections</a></li>
+                <li><a href="#" class="nav-link active" data-section="home">Work</a></li>
                 <li><a href="#" class="nav-link" data-section="about">About</a></li>
                 <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
             </ul>
@@ -33,37 +35,20 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="section hero active">
-        <div class="hero-content">
+    <!-- Home Section with Hero + Collections -->
+    <section id="home" class="section home active">
+        <!-- Hero -->
+        <div class="hero">
             <h1 class="hero-title">
-                <span class="line line-1 name-first">Andreas</span>
-                <span class="line line-2 name-last">LORENZ</span>
+                <span class="name-first">Andreas</span>
+                <span class="name-last">Lorenz</span>
             </h1>
-            <p class="hero-subtitle">Photographer & Visual Storyteller</p>
-            <div class="hero-cta">
-                <button class="btn" data-section="work">
-                    <span>View Collections</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work / Collections Section -->
-    <section id="work" class="section work">
-        <div class="section-header">
-            <p class="section-label">Portfolio</p>
-            <h2 class="section-title">Collections</h2>
         </div>
 
-        <!-- Collections Grid -->
-        <div class="collections-grid" id="collections-grid">
-            <div class="loading-state">
-                <div class="loader"></div>
-                <p>Loading collections...</p>
+        <!-- Collections Grid on Home -->
+        <div class="collections-section">
+            <div class="collections-grid" id="collections-grid">
+                <!-- Collections loaded via JS -->
             </div>
         </div>
 
@@ -85,40 +70,20 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="about-content">
-            <div class="about-photo">
-                <img src="images/profile.jpg" alt="Andreas Lorenz" onerror="this.style.display='none'">
-            </div>
             <h2 class="about-name">Andreas Lorenz</h2>
             <p class="about-role">Photographer</p>
             <div class="about-bio">
                 <p>Every photograph is a conversation between light and shadow, between what was and what might be.</p>
-                <p>I capture moments that tell stories, seeking the extraordinary within the everyday—the play of morning light, the quiet dignity of a fleeting moment, the magic of golden hour.</p>
+                <p>I capture moments that tell stories, seeking the extraordinary within the everyday.</p>
             </div>
-            <p class="about-quote">"Photography is the art of frozen time... the ability to store emotion and feelings within a frame."</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="contact-content">
-            <h2 class="contact-title">Let's Connect</h2>
-            <p class="contact-subtitle">Have a project in mind? I'd love to hear from you.</p>
+            <h2 class="contact-title">Contact</h2>
             <a href="mailto:hello@andreas-lorenz-photography.org" class="contact-email">hello@andreas-lorenz-photography.org</a>
-            <div class="social-links">
-                <a href="#" class="social-link" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link" aria-label="Flickr">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <circle cx="7" cy="12" r="4.5"/>
-                        <circle cx="17" cy="12" r="4.5"/>
-                    </svg>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -144,11 +109,6 @@
             <p class="lightbox-caption" id="lightbox-caption"></p>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Andreas Lorenz Photography. All rights reserved.</p>
-    </footer>
 
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
