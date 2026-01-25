@@ -217,7 +217,7 @@ img {
 
 .collection-card {
     position: relative;
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     overflow: hidden;
     cursor: pointer;
     background: var(--color-bg-card);
@@ -524,6 +524,10 @@ img {
 
     .collections-grid {
         grid-template-columns: 1fr;
+    }
+
+    .collection-card {
+        aspect-ratio: 4/5;
     }
 
     .photos-grid {
