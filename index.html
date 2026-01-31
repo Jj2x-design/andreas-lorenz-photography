@@ -13,16 +13,16 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <a href="#" class="logo" data-section="home">
+        <a href="#" class="logo" id="logo-link">
             <span class="logo-first">Andreas</span>
             <span class="logo-last">Lorenz</span>
         </a>
         <nav class="nav">
-            <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-section="home">Work</a></li>
-                <li><a href="#" class="nav-link" data-section="about">About</a></li>
-                <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
-            </ul>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="5"/>
@@ -35,22 +35,24 @@
         </nav>
     </header>
 
-    <!-- Home Section with Hero + Collections -->
-    <section id="home" class="section home active">
-        <!-- Hero -->
-        <div class="hero">
-            <h1 class="hero-title">
-                <span class="name-first">Andreas</span>
-                <span class="name-last">Lorenz</span>
-            </h1>
-        </div>
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+        <nav class="menu-nav">
+            <ul class="menu-links" id="menu-links">
+                <!-- Album links loaded via JS -->
+            </ul>
+            <a href="#about" class="menu-link menu-about-link" id="menu-about-link">About</a>
+        </nav>
+    </div>
 
-        <!-- Collections Grid on Home -->
-        <div class="collections-section">
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Collections Grid -->
+        <section class="collections-section" id="collections-section">
             <div class="collections-grid" id="collections-grid">
                 <!-- Collections loaded via JS -->
             </div>
-        </div>
+        </section>
 
         <!-- Album View (photos within a collection) -->
         <div class="album-view" id="album-view">
@@ -65,27 +67,26 @@
             </div>
             <div class="photos-grid" id="photos-grid"></div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="about-content">
-            <h2 class="about-name">Andreas Lorenz</h2>
-            <p class="about-role">Photographer</p>
-            <div class="about-bio">
-                <p>Every photograph is a conversation between light and shadow, between what was and what might be.</p>
-                <p>I capture moments that tell stories, seeking the extraordinary within the everyday.</p>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2 class="about-name">Andreas Lorenz</h2>
+                <p class="about-role">Photographer</p>
+                <div class="about-bio">
+                    <p class="quote">"A good photograph is knowing where to stand."</p>
+                    <p class="quote-author">— Ansel Adams</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="contact-content">
-            <h2 class="contact-title">Contact</h2>
-            <a href="mailto:hello@andreas-lorenz-photography.org" class="contact-email">hello@andreas-lorenz-photography.org</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:andreas.lorenz@me.com" class="contact-link">Contact Me</a>
         </div>
-    </section>
+    </footer>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">

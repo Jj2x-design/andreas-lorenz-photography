@@ -11,6 +11,12 @@
 
     const elements = {
         themeToggle: document.getElementById('theme-toggle'),
+        menuToggle: document.getElementById('menu-toggle'),
+        menuOverlay: document.getElementById('menu-overlay'),
+        menuLinks: document.getElementById('menu-links'),
+        menuAboutLink: document.getElementById('menu-about-link'),
+        logoLink: document.getElementById('logo-link'),
+        collectionsSection: document.getElementById('collections-section'),
         collectionsGrid: document.getElementById('collections-grid'),
         albumView: document.getElementById('album-view'),
         albumTitle: document.getElementById('album-title'),
@@ -21,16 +27,15 @@
         lightboxCaption: document.getElementById('lightbox-caption'),
         lightboxClose: document.getElementById('lightbox-close'),
         lightboxPrev: document.getElementById('lightbox-prev'),
-        lightboxNext: document.getElementById('lightbox-next'),
-        collectionsSection: document.querySelector('.collections-section'),
-        hero: document.querySelector('.hero')
+        lightboxNext: document.getElementById('lightbox-next')
     };
 
     function init() {
         initTheme();
-        initNavigation();
+        initMenu();
         initLightbox();
         loadCollections();
+        initNavigation();
     }
 
     // Theme
@@ -47,38 +52,76 @@
         localStorage.setItem('theme', newTheme);
     }
 
+    // Menu
+    function initMenu() {
+        elements.menuToggle?.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking overlay background
+        elements.menuOverlay?.addEventListener('click', (e) => {
+            if (e.target === elements.menuOverlay) {
+                closeMenu();
+            }
+        });
+
+        // About link in menu
+        elements.menuAboutLink?.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeMenu();
+            document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Populate menu with album links
+        const albums = CONFIG?.manualAlbums || [];
+        if (elements.menuLinks) {
+            elements.menuLinks.innerHTML = albums.map(album =>
+                `<li><a href="#" class="menu-link" data-album-id="${album.id}">${album.title}</a></li>`
+            ).join('');
+
+            elements.menuLinks.querySelectorAll('.menu-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const albumId = link.dataset.albumId;
+                    const album = albums.find(a => a.id === albumId);
+                    if (album) {
+                        closeMenu();
+                        openAlbum(album);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+    }
+
+    function toggleMenu() {
+        const isOpen = elements.menuOverlay?.classList.contains('active');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    function openMenu() {
+        elements.menuOverlay?.classList.add('active');
+        elements.menuToggle?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        elements.menuOverlay?.classList.remove('active');
+        elements.menuToggle?.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     // Navigation
     function initNavigation() {
-        document.querySelectorAll('[data-section]').forEach(el => {
-            el.addEventListener('click', (e) => {
-                e.preventDefault();
-                const sectionId = el.dataset.section;
-                navigateTo(sectionId);
-            });
+        elements.logoLink?.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCollections();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         elements.backBtn?.addEventListener('click', showCollections);
-    }
-
-    function navigateTo(sectionId) {
-        document.querySelectorAll('.section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-        }
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.toggle('active', link.dataset.section === sectionId);
-        });
-
-        if (sectionId === 'home') {
-            showCollections();
-        }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Encode path for URLs with special characters
@@ -153,17 +196,17 @@
             });
         }
 
-        // Hide hero and collections, show album view
-        if (elements.hero) elements.hero.style.display = 'none';
+        // Hide collections, show album view
         if (elements.collectionsSection) elements.collectionsSection.style.display = 'none';
         if (elements.albumView) elements.albumView.classList.add('active');
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showCollections() {
         currentAlbum = null;
         currentPhotos = [];
 
-        if (elements.hero) elements.hero.style.display = 'block';
         if (elements.collectionsSection) elements.collectionsSection.style.display = 'block';
         if (elements.albumView) elements.albumView.classList.remove('active');
     }
