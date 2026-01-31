@@ -428,9 +428,9 @@ img {
 /* Filmstrip */
 .filmstrip {
     display: flex;
-    gap: 4px;
+    gap: 12px;
     overflow-x: auto;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     scrollbar-width: thin;
     scrollbar-color: var(--color-border) transparent;
 }
@@ -456,6 +456,8 @@ img {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 0.3s ease;
+    border: 3px solid #000;
+    box-shadow: 0 0 0 1px var(--color-border);
 }
 
 .filmstrip-item:hover {
@@ -464,8 +466,7 @@ img {
 
 .filmstrip-item.active {
     opacity: 1;
-    outline: 2px solid var(--color-text);
-    outline-offset: -2px;
+    border-color: var(--color-text);
 }
 
 .filmstrip-item img {
