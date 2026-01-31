@@ -20,8 +20,12 @@
         collectionsGrid: document.getElementById('collections-grid'),
         albumView: document.getElementById('album-view'),
         albumTitle: document.getElementById('album-title'),
-        photosGrid: document.getElementById('photos-grid'),
         backBtn: document.getElementById('back-btn'),
+        galleryMainImg: document.getElementById('gallery-main-img'),
+        galleryCaption: document.getElementById('gallery-caption'),
+        galleryPrev: document.getElementById('gallery-prev'),
+        galleryNext: document.getElementById('gallery-next'),
+        filmstrip: document.getElementById('filmstrip'),
         lightbox: document.getElementById('lightbox'),
         lightboxImg: document.getElementById('lightbox-img'),
         lightboxCaption: document.getElementById('lightbox-caption'),
@@ -33,6 +37,7 @@
     function init() {
         initTheme();
         initMenu();
+        initGallery();
         initLightbox();
         loadCollections();
         initNavigation();
@@ -168,31 +173,87 @@
         });
     }
 
+    // Gallery
+    function initGallery() {
+        elements.galleryPrev?.addEventListener('click', () => navigateGallery(-1));
+        elements.galleryNext?.addEventListener('click', () => navigateGallery(1));
+
+        // Click main image to open lightbox
+        elements.galleryMainImg?.addEventListener('click', () => {
+            openLightbox(currentPhotoIndex);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!elements.albumView?.classList.contains('active')) return;
+            if (elements.lightbox?.classList.contains('active')) return;
+
+            switch (e.key) {
+                case 'ArrowLeft': navigateGallery(-1); break;
+                case 'ArrowRight': navigateGallery(1); break;
+            }
+        });
+    }
+
+    function navigateGallery(direction) {
+        let newIndex = currentPhotoIndex + direction;
+        if (newIndex < 0) newIndex = currentPhotos.length - 1;
+        if (newIndex >= currentPhotos.length) newIndex = 0;
+        showGalleryPhoto(newIndex);
+    }
+
+    function showGalleryPhoto(index) {
+        currentPhotoIndex = index;
+        const photo = currentPhotos[index];
+        if (!photo) return;
+
+        const imgPath = encodePath(photo.url_large || photo.url_medium);
+        elements.galleryMainImg.src = imgPath;
+        elements.galleryMainImg.alt = photo.title || 'Photo';
+        elements.galleryCaption.textContent = photo.title || '';
+
+        // Update filmstrip active state
+        elements.filmstrip?.querySelectorAll('.filmstrip-item').forEach((item, i) => {
+            item.classList.toggle('active', i === index);
+        });
+
+        // Scroll filmstrip to show active item
+        const activeThumb = elements.filmstrip?.querySelector('.filmstrip-item.active');
+        if (activeThumb) {
+            activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+    }
+
     function openAlbum(album) {
         currentAlbum = album;
         currentPhotos = album.photos || [];
+        currentPhotoIndex = 0;
 
         if (elements.albumTitle) {
             elements.albumTitle.textContent = album.title;
         }
 
-        if (elements.photosGrid) {
-            elements.photosGrid.innerHTML = currentPhotos.map((photo, index) => {
+        // Render filmstrip
+        if (elements.filmstrip) {
+            elements.filmstrip.innerHTML = currentPhotos.map((photo, index) => {
                 const imgPath = encodePath(photo.url_medium);
                 return `
-                    <div class="photo-item" data-index="${index}">
+                    <div class="filmstrip-item${index === 0 ? ' active' : ''}" data-index="${index}">
                         <img src="${imgPath}" alt="${photo.title || ''}" loading="lazy">
                     </div>
                 `;
             }).join('');
 
-            elements.photosGrid.querySelectorAll('.photo-item').forEach(item => {
+            elements.filmstrip.querySelectorAll('.filmstrip-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const index = parseInt(item.dataset.index, 10);
-                    openLightbox(index);
+                    showGalleryPhoto(index);
                 });
             });
         }
+
+        // Show first photo
+        showGalleryPhoto(0);
 
         // Hide collections, show album view
         if (elements.collectionsSection) elements.collectionsSection.style.display = 'none';

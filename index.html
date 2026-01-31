@@ -65,7 +65,25 @@
                 </button>
                 <h3 class="album-title" id="album-title"></h3>
             </div>
-            <div class="photos-grid" id="photos-grid"></div>
+            <div class="gallery">
+                <div class="gallery-main">
+                    <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="gallery-image-container">
+                        <img src="" alt="" id="gallery-main-img" class="gallery-main-img">
+                    </div>
+                    <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="gallery-caption" id="gallery-caption"></p>
+                <div class="filmstrip" id="filmstrip"></div>
+            </div>
         </div>
 
         <!-- About Section -->
