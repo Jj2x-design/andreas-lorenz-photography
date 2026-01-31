@@ -148,14 +148,12 @@
 
         elements.collectionsGrid.innerHTML = albums.map(album => {
             const coverPath = encodePath(album.coverImage);
-            const photoCount = album.photos?.length || 0;
 
             return `
                 <article class="collection-card" data-album-id="${album.id}">
                     <img src="${coverPath}" alt="${album.title}" loading="lazy">
                     <div class="collection-info">
                         <h3 class="collection-name">${album.title}</h3>
-                        <p class="collection-count">${photoCount} Photos</p>
                     </div>
                 </article>
             `;

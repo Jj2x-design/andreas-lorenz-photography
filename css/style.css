@@ -252,21 +252,19 @@ img {
    COLLECTIONS GRID
    ================================ */
 .collections-section {
-    padding: 2rem;
-    min-height: calc(100vh - 5rem);
+    padding: 0;
 }
 
 .collections-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .collection-card {
     position: relative;
-    aspect-ratio: 16/9;
+    width: 100%;
+    aspect-ratio: 21/9;
     overflow: hidden;
     cursor: pointer;
     background: var(--color-bg-card);
@@ -280,7 +278,7 @@ img {
 }
 
 .collection-card:hover img {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 .collection-info {
@@ -288,24 +286,15 @@ img {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem;
+    padding: 3rem;
     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
 }
 
 .collection-name {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: 3rem;
     color: #fff;
     letter-spacing: 0.02em;
-}
-
-.collection-count {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 0.25rem;
 }
 
 /* ================================
@@ -570,12 +559,16 @@ img {
         padding: 1.25rem;
     }
 
-    .collections-grid {
-        grid-template-columns: 1fr;
+    .collection-card {
+        aspect-ratio: 3/4;
     }
 
-    .collection-card {
-        aspect-ratio: 4/5;
+    .collection-info {
+        padding: 2rem;
+    }
+
+    .collection-name {
+        font-size: 2.5rem;
     }
 
     .album-view {
