@@ -23,6 +23,7 @@
         backBtn: document.getElementById('back-btn'),
         galleryMainImg: document.getElementById('gallery-main-img'),
         galleryCaption: document.getElementById('gallery-caption'),
+        galleryDate: document.getElementById('gallery-date'),
         galleryPrev: document.getElementById('gallery-prev'),
         galleryNext: document.getElementById('gallery-next'),
         filmstrip: document.getElementById('filmstrip'),
@@ -211,6 +212,10 @@
         elements.galleryMainImg.src = imgPath;
         elements.galleryMainImg.alt = photo.title || 'Photo';
         elements.galleryCaption.textContent = photo.title || '';
+        if (elements.galleryDate) {
+            elements.galleryDate.textContent = photo.date || '';
+            elements.galleryDate.style.display = photo.date ? '' : 'none';
+        }
 
         // Update filmstrip active state
         elements.filmstrip?.querySelectorAll('.filmstrip-item').forEach((item, i) => {
