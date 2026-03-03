@@ -5,6 +5,7 @@ Generate config.js from album folders with EXIF date sorting.
 
 import os
 import json
+import unicodedata
 from PIL import Image
 from PIL.ExifTags import TAGS
 from datetime import datetime
@@ -67,7 +68,7 @@ def scan_album(album_id):
     folder = os.path.join(ALBUMS_DIR, album_id)
     photos = []
 
-    for filename in sorted(os.listdir(folder)):
+    for filename in sorted(unicodedata.normalize('NFC', f) for f in os.listdir(folder)):
         if not filename.lower().endswith(('.jpg', '.jpeg', '.png')):
             continue
         filepath = os.path.join(folder, filename)
