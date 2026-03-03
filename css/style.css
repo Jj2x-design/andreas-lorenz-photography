@@ -448,6 +448,14 @@ img {
     scrollbar-color: var(--color-border) transparent;
 }
 
+/* Center items when they don't fill the row; collapse when they overflow
+   so scrolling still works (items never get clipped on the left) */
+.filmstrip::before,
+.filmstrip::after {
+    content: '';
+    flex: 1;
+}
+
 .filmstrip::-webkit-scrollbar {
     height: 6px;
 }
