@@ -13,23 +13,38 @@ from datetime import datetime
 ALBUMS_DIR = 'images/albums'
 
 ALBUM_META = {
-    'alps':       {'title': 'Alps',       'description': 'Alpine landscapes'},
+    'metro':      {'title': 'Metro',      'description': 'Underground stations around the world'},
+    'singapore':  {'title': 'Singapore',  'description': 'The Lion City'},
     'animals':    {'title': 'Animals',    'description': 'Wildlife photography'},
     'bavaria':    {'title': 'Bavaria',    'description': 'Bavaria, Germany'},
-    'chile':      {'title': 'Chile',      'description': 'Santiago and beyond'},
+    'alps':       {'title': 'Alps',       'description': 'Alpine landscapes'},
     'fireworks':  {'title': 'Fireworks',  'description': 'National Day celebrations'},
-    'indonesia':  {'title': 'Indonesia',  'description': 'Nusa Penida and Batam'},
-    'malaysia':   {'title': 'Malaysia',   'description': 'Kuala Lumpur and Johor'},
-    'metro':      {'title': 'Metro',      'description': 'Underground stations around the world'},
     'nepal':      {'title': 'Nepal',      'description': 'Himalayan adventures'},
-    'singapore':  {'title': 'Singapore',  'description': 'The Lion City'},
+    'malaysia':   {'title': 'Malaysia',   'description': 'Kuala Lumpur and Johor'},
     'spain':      {'title': 'Spain',      'description': 'Barcelona and Catalonia'},
+    'indonesia':  {'title': 'Indonesia',  'description': 'Nusa Penida and Bali'},
+    'chile':      {'title': 'Chile',      'description': 'Santiago and beyond'},
 }
 
 ALBUM_ORDER = [
-    'singapore', 'alps', 'nepal', 'metro', 'animals',
-    'fireworks', 'spain', 'chile', 'malaysia', 'indonesia', 'bavaria'
+    'metro', 'singapore', 'animals', 'bavaria', 'alps',
+    'fireworks', 'nepal', 'malaysia', 'spain', 'indonesia', 'chile',
 ]
+
+# Manual cover overrides: album_id -> exact filename in that album's folder
+COVER_OVERRIDES = {
+    'metro':      'westfriedhof | munich | germany.jpg',
+    'singapore':  'buddah tooth relic temple | south bridge road | singapore.jpg',
+    'animals':    'orangutan | singapore zoo | mandai | singapore.jpg.jpg',
+    'bavaria':    'thenn | germany ii.jpg',
+    'alps':       'bremer hütte | tirol | austria.jpg',
+    'fireworks':  'national day parade rehersal 2022 | marina bay | singapore.jpg',
+    'nepal':      'everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg',
+    'malaysia':   'petronas towers | kuala. lumpur | malaysia.jpg',
+    'spain':      'el masnou | catalonia | spain.jpg',
+    'indonesia':  'gunung agung | bali | indonesia.jpg',
+    'chile':      'rosal | santiago | chile.jpg',
+}
 
 def get_exif_date(filepath):
     """Extract DateTimeOriginal from EXIF, returns datetime or None."""
@@ -74,8 +89,14 @@ def scan_album(album_id):
         filepath = os.path.join(folder, filename)
         dt = get_exif_date(filepath)
         date_str = format_date(dt)
-        # Title: filename without extension
-        title = os.path.splitext(filename)[0]
+        # Title: strip all trailing image extensions (handles double .jpg.jpg)
+        title = filename
+        for _ in range(2):
+            base, ext = os.path.splitext(title)
+            if ext.lower() in ('.jpg', '.jpeg', '.png'):
+                title = base
+            else:
+                break
         url = f'{ALBUMS_DIR}/{album_id}/{filename}'
         photos.append({
             'title': title,
@@ -97,11 +118,16 @@ def scan_album(album_id):
     return photos
 
 def pick_cover(photos, album_id):
-    """Pick cover image - most recent dated photo, or last photo."""
+    """Return cover url_medium: manual override if set, else most recent photo."""
+    override = COVER_OVERRIDES.get(album_id)
+    if override:
+        nfc_override = unicodedata.normalize('NFC', override)
+        for p in photos:
+            if p['url_medium'].endswith('/' + nfc_override):
+                return p['url_medium']
+        print(f'  WARNING: cover override not found for {album_id}: {override}')
     dated = [p for p in photos if p.get('date')]
-    if dated:
-        return dated[-1]['url_medium']
-    return photos[-1]['url_medium'] if photos else ''
+    return (dated[-1] if dated else photos[-1])['url_medium'] if photos else ''
 
 def js_value(v):
     """Convert Python value to JS literal."""

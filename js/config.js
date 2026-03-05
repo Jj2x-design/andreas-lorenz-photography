@@ -6,10 +6,32 @@
 const CONFIG = {
     manualAlbums: [
         {
+            id: "metro",
+            title: "Metro",
+            description: "Underground stations around the world",
+            coverImage: "images/albums/metro/westfriedhof | munich | germany.jpg",
+            photos: [
+                { id: "me1", title: "aljunied mrt station", url_medium: "images/albums/metro/aljunied mrt station.jpg", url_large: "images/albums/metro/aljunied mrt station.jpg", date: "31st May 2020" },
+                { id: "me2", title: "smrt deport | bishan  singapore", url_medium: "images/albums/metro/smrt deport | bishan  singapore.jpg", url_large: "images/albums/metro/smrt deport | bishan  singapore.jpg", date: "26th January 2022" },
+                { id: "me3", title: "orchard | singapore", url_medium: "images/albums/metro/orchard | singapore.jpg", url_large: "images/albums/metro/orchard | singapore.jpg", date: "24th November 2022" },
+                { id: "me4", title: "expo | singapore", url_medium: "images/albums/metro/expo | singapore.jpg", url_large: "images/albums/metro/expo | singapore.jpg", date: "11th February 2023" },
+                { id: "me5", title: "bras basah | singapore", url_medium: "images/albums/metro/bras basah | singapore.jpg", url_large: "images/albums/metro/bras basah | singapore.jpg", date: "24th May 2023" },
+                { id: "me6", title: "westfriedhof | munich | germany", url_medium: "images/albums/metro/westfriedhof | munich | germany.jpg", url_large: "images/albums/metro/westfriedhof | munich | germany.jpg", date: "6th August 2023" },
+                { id: "me7", title: "bencoolen | singapore", url_medium: "images/albums/metro/bencoolen | singapore.jpg", url_large: "images/albums/metro/bencoolen | singapore.jpg", date: "9th December 2023" },
+                { id: "me8", title: "candidplatz | munich | germany", url_medium: "images/albums/metro/candidplatz | munich | germany.jpg", url_large: "images/albums/metro/candidplatz | munich | germany.jpg", date: "2nd August 2024" },
+                { id: "me9", title: "kreilerstrasse | munich | germany", url_medium: "images/albums/metro/kreilerstrasse | munich | germany.jpg", url_large: "images/albums/metro/kreilerstrasse | munich | germany.jpg", date: "2nd August 2024" },
+                { id: "me10", title: "conlay | kuala lumpur | malaysia", url_medium: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", url_large: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", date: "18th February 2025" },
+                { id: "me11", title: "olympia einkaufszentrum | munich | germany", url_medium: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", url_large: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me12", title: "moosach | munich | germany", url_medium: "images/albums/metro/moosach | munich | germany.jpg", url_large: "images/albums/metro/moosach | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me13", title: "u-bahn | georg-brauchle-ring | munich | germany", url_medium: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me14", title: "u-bahn | sendlinger tor | munich | germany", url_medium: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", date: "31st July 2025" }
+            ]
+        },
+        {
             id: "singapore",
             title: "Singapore",
             description: "The Lion City",
-            coverImage: "images/albums/singapore/changi control tower | changi | singapore.jpg",
+            coverImage: "images/albums/singapore/buddah tooth relic temple | south bridge road | singapore.jpg",
             photos: [
                 { id: "si1", title: "pula ubin ferry | singapore", url_medium: "images/albums/singapore/pula ubin ferry | singapore.jpg", url_large: "images/albums/singapore/pula ubin ferry | singapore.jpg", date: "17th February 2018" },
                 { id: "si2", title: "napier road | singapore", url_medium: "images/albums/singapore/napier road | singapore.jpg", url_large: "images/albums/singapore/napier road | singapore.jpg", date: "2nd February 2019" },
@@ -48,78 +70,18 @@ const CONFIG = {
             ]
         },
         {
-            id: "alps",
-            title: "Alps",
-            description: "Alpine landscapes",
-            coverImage: "images/albums/alps/st. bartholomä | königssee | bavaria | germany.jpg",
-            photos: [
-                { id: "al1", title: "kalkwand | ilmspitze | tirol | austria", url_medium: "images/albums/alps/kalkwand | ilmspitze | tirol | austria.jpg", url_large: "images/albums/alps/kalkwand | ilmspitze | tirol | austria.jpg", date: "4th September 2021" },
-                { id: "al2", title: "bremer hütte | tirol | austria", url_medium: "images/albums/alps/bremer hütte | tirol | austria.jpg", url_large: "images/albums/alps/bremer hütte | tirol | austria.jpg", date: "5th September 2021" },
-                { id: "al3", title: "paradies | stubai | tirol | austria", url_medium: "images/albums/alps/paradies | stubai | tirol | austria.jpg", url_large: "images/albums/alps/paradies | stubai | tirol | austria.jpg", date: "5th September 2021" },
-                { id: "al4", title: "paradies | stubaier höhenweg | tirol | austria", url_medium: "images/albums/alps/paradies | stubaier höhenweg | tirol | austria.jpg", url_large: "images/albums/alps/paradies | stubaier höhenweg | tirol | austria.jpg", date: "5th September 2021" },
-                { id: "al5", title: "nürnberger hütte ii | tirol | austria", url_medium: "images/albums/alps/nürnberger hütte ii | tirol | austria.jpg", url_large: "images/albums/alps/nürnberger hütte ii | tirol | austria.jpg", date: "5th September 2021" },
-                { id: "al6", title: "nürnberger hütte | tirol | austria", url_medium: "images/albums/alps/nürnberger hütte | tirol | austria.jpg", url_large: "images/albums/alps/nürnberger hütte | tirol | austria.jpg", date: "5th September 2021" },
-                { id: "al7", title: "botzer | alto adige| italy", url_medium: "images/albums/alps/botzer | alto adige| italy.jpg", url_large: "images/albums/alps/botzer | alto adige| italy.jpg", date: "12th September 2021" },
-                { id: "al8", title: "sonnklarspitze | tirol | austria", url_medium: "images/albums/alps/sonnklarspitze | tirol | austria.jpg", url_large: "images/albums/alps/sonnklarspitze | tirol | austria.jpg", date: "13th September 2021" },
-                { id: "al9", title: "königssee | bavaria | germany", url_medium: "images/albums/alps/königssee | bavaria | germany.jpg", url_large: "images/albums/alps/königssee | bavaria | germany.jpg", date: "31st July 2023" },
-                { id: "al10", title: "königssee | bavaria | germany ii", url_medium: "images/albums/alps/königssee | bavaria | germany ii.jpg", url_large: "images/albums/alps/königssee | bavaria | germany ii.jpg", date: "31st July 2023" },
-                { id: "al11", title: "st. bartholomä | königssee | bavaria | germany", url_medium: "images/albums/alps/st. bartholomä | königssee | bavaria | germany.jpg", url_large: "images/albums/alps/st. bartholomä | königssee | bavaria | germany.jpg", date: "31st July 2023" }
-            ]
-        },
-        {
-            id: "nepal",
-            title: "Nepal",
-            description: "Himalayan adventures",
-            coverImage: "images/albums/nepal/thakiri choling gomba | phortse | solokhumbu | nepal.jpg",
-            photos: [
-                { id: "ne1", title: "namche bazar | solokhumbu | nepal", url_medium: "images/albums/nepal/namche bazar | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/namche bazar | solokhumbu | nepal.jpg", date: "21st October 2000" },
-                { id: "ne2", title: "lothse - ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/lothse - ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/lothse - ama dablam | solokhumbu | nepal.jpg", date: "22nd October 2000" },
-                { id: "ne3", title: "tengboche | solokhumbu | nepal", url_medium: "images/albums/nepal/tengboche | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/tengboche | solokhumbu | nepal.jpg", date: "23rd October 2000" },
-                { id: "ne4", title: "ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/ama dablam | solokhumbu | nepal.jpg", date: "23rd October 2000" },
-                { id: "ne5", title: "base camp | mount everest | solokhumbu | nepal", url_medium: "images/albums/nepal/base camp | mount everest | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/base camp | mount everest | solokhumbu | nepal.jpg", date: "30th October 2000" },
-                { id: "ne6", title: "everst | lothse | nuptse | solokhumbu | nepal", url_medium: "images/albums/nepal/everst | lothse | nuptse | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/everst | lothse | nuptse | solokhumbu | nepal.jpg", date: "30th October 2000" },
-                { id: "ne7", title: "khumbu glacier | ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/khumbu glacier | ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/khumbu glacier | ama dablam | solokhumbu | nepal.jpg", date: "30th October 2000" },
-                { id: "ne8", title: "ama dablam ii | solokhumbu | nepal", url_medium: "images/albums/nepal/ama dablam ii | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/ama dablam ii | solokhumbu | nepal.jpg", date: "30th October 2000" },
-                { id: "ne9", title: "taboche | solukhumbu | nepal", url_medium: "images/albums/nepal/taboche | solukhumbu | nepal.jpg", url_large: "images/albums/nepal/taboche | solukhumbu | nepal.jpg", date: "3rd November 2000" },
-                { id: "ne10", title: "everst - nuptse - lhotse - makalu | solokhumbu | nepal", url_medium: "images/albums/nepal/everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg", date: "3rd November 2000" },
-                { id: "ne11", title: "thakiri choling gomba | phortse | solokhumbu | nepal", url_medium: "images/albums/nepal/thakiri choling gomba | phortse | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/thakiri choling gomba | phortse | solokhumbu | nepal.jpg", date: "7th November 2000" }
-            ]
-        },
-        {
-            id: "metro",
-            title: "Metro",
-            description: "Underground stations around the world",
-            coverImage: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg",
-            photos: [
-                { id: "me1", title: "aljunied mrt station", url_medium: "images/albums/metro/aljunied mrt station.jpg", url_large: "images/albums/metro/aljunied mrt station.jpg", date: "31st May 2020" },
-                { id: "me2", title: "smrt deport | bishan  singapore", url_medium: "images/albums/metro/smrt deport | bishan  singapore.jpg", url_large: "images/albums/metro/smrt deport | bishan  singapore.jpg", date: "26th January 2022" },
-                { id: "me3", title: "orchard | singapore", url_medium: "images/albums/metro/orchard | singapore.jpg", url_large: "images/albums/metro/orchard | singapore.jpg", date: "24th November 2022" },
-                { id: "me4", title: "expo | singapore", url_medium: "images/albums/metro/expo | singapore.jpg", url_large: "images/albums/metro/expo | singapore.jpg", date: "11th February 2023" },
-                { id: "me5", title: "bras basah | singapore", url_medium: "images/albums/metro/bras basah | singapore.jpg", url_large: "images/albums/metro/bras basah | singapore.jpg", date: "24th May 2023" },
-                { id: "me6", title: "westfriedhof | munich | germany", url_medium: "images/albums/metro/westfriedhof | munich | germany.jpg", url_large: "images/albums/metro/westfriedhof | munich | germany.jpg", date: "6th August 2023" },
-                { id: "me7", title: "bencoolen | singapore", url_medium: "images/albums/metro/bencoolen | singapore.jpg", url_large: "images/albums/metro/bencoolen | singapore.jpg", date: "9th December 2023" },
-                { id: "me8", title: "candidplatz | munich | germany", url_medium: "images/albums/metro/candidplatz | munich | germany.jpg", url_large: "images/albums/metro/candidplatz | munich | germany.jpg", date: "2nd August 2024" },
-                { id: "me9", title: "kreilerstrasse | munich | germany", url_medium: "images/albums/metro/kreilerstrasse | munich | germany.jpg", url_large: "images/albums/metro/kreilerstrasse | munich | germany.jpg", date: "2nd August 2024" },
-                { id: "me10", title: "conlay | kuala lumpur | malaysia", url_medium: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", url_large: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", date: "18th February 2025" },
-                { id: "me11", title: "olympia einkaufszentrum | munich | germany", url_medium: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", url_large: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me12", title: "moosach | munich | germany", url_medium: "images/albums/metro/moosach | munich | germany.jpg", url_large: "images/albums/metro/moosach | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me13", title: "u-bahn | georg-brauchle-ring | munich | germany", url_medium: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me14", title: "u-bahn | sendlinger tor | munich | germany", url_medium: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", date: "31st July 2025" }
-            ]
-        },
-        {
             id: "animals",
             title: "Animals",
             description: "Wildlife photography",
-            coverImage: "images/albums/animals/stork-billed kingfisher | botanical gardens | singapore.jpg",
+            coverImage: "images/albums/animals/orangutan | singapore zoo | mandai | singapore.jpg.jpg",
             photos: [
                 { id: "an1", title: "gharial | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/gharial | singapore zoo | mandai | singapore.jpg", url_large: "images/albums/animals/gharial | singapore zoo | mandai | singapore.jpg", date: "7th January 2018" },
                 { id: "an2", title: "butterfly | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/butterfly | singapore zoo | mandai | singapore.jpg", url_large: "images/albums/animals/butterfly | singapore zoo | mandai | singapore.jpg", date: "14th July 2019" },
                 { id: "an3", title: "tucan | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/tucan | singapore zoo | mandai | singapore.jpg", url_large: "images/albums/animals/tucan | singapore zoo | mandai | singapore.jpg", date: "14th July 2019" },
                 { id: "an4", title: "macritchie | singapore", url_medium: "images/albums/animals/macritchie | singapore.jpg", url_large: "images/albums/animals/macritchie | singapore.jpg", date: "30th May 2021" },
                 { id: "an5", title: "little egret | sungei buloh | singapore", url_medium: "images/albums/animals/little egret | sungei buloh | singapore.jpg", url_large: "images/albums/animals/little egret | sungei buloh | singapore.jpg", date: "10th January 2022" },
-                { id: "an6", title: "orangutan | singapore zoo | mandai | singapore.jpg", url_medium: "images/albums/animals/orangutan | singapore zoo | mandai | singapore.jpg.jpg", url_large: "images/albums/animals/orangutan | singapore zoo | mandai | singapore.jpg.jpg", date: "12th January 2022" },
-                { id: "an7", title: "meerkat | singapore zoo | mandai | singapore.jpg", url_medium: "images/albums/animals/meerkat | singapore zoo | mandai | singapore.jpg.jpg", url_large: "images/albums/animals/meerkat | singapore zoo | mandai | singapore.jpg.jpg", date: "12th January 2022" },
+                { id: "an6", title: "orangutan | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/orangutan | singapore zoo | mandai | singapore.jpg.jpg", url_large: "images/albums/animals/orangutan | singapore zoo | mandai | singapore.jpg.jpg", date: "12th January 2022" },
+                { id: "an7", title: "meerkat | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/meerkat | singapore zoo | mandai | singapore.jpg.jpg", url_large: "images/albums/animals/meerkat | singapore zoo | mandai | singapore.jpg.jpg", date: "12th January 2022" },
                 { id: "an8", title: "chimpanzee | singapore zoo | mandai | singapore", url_medium: "images/albums/animals/chimpanzee | singapore zoo | mandai | singapore.jpg", url_large: "images/albums/animals/chimpanzee | singapore zoo | mandai | singapore.jpg", date: "12th January 2022" },
                 { id: "an9", title: "grey heron | bishan-ang mo kio park | singapore", url_medium: "images/albums/animals/grey heron | bishan-ang mo kio park | singapore.jpg", url_large: "images/albums/animals/grey heron | bishan-ang mo kio park | singapore.jpg", date: "13th January 2022" },
                 { id: "an10", title: "zebra dove | jurong bird park | singapore", url_medium: "images/albums/animals/zebra dove | jurong bird park | singapore.jpg", url_large: "images/albums/animals/zebra dove | jurong bird park | singapore.jpg", date: "30th December 2022" },
@@ -149,87 +111,10 @@ const CONFIG = {
             ]
         },
         {
-            id: "fireworks",
-            title: "Fireworks",
-            description: "National Day celebrations",
-            coverImage: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | iii.jpg",
-            photos: [
-                { id: "fi1", title: "national day parade rehersal 2022 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore.jpg", date: "2nd July 2022" },
-                { id: "fi2", title: "national day parade rehersal 2022 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore | ii.jpg", date: "2nd July 2022" },
-                { id: "fi3", title: "national day parade rehersal 2023 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2023 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2023 | marina bay | singapore.jpg", date: "22nd June 2024" },
-                { id: "fi4", title: "national day parade rehersal 2024 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore.jpg", date: "29th June 2024" },
-                { id: "fi5", title: "national day parade rehersal 2024 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | ii.jpg", date: "13th July 2024" },
-                { id: "fi6", title: "national day parade rehersal 2024 | marina bay | singapore | iii", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iii.jpg", date: "13th July 2024" },
-                { id: "fi7", title: "national day parade rehersal 2024 | marina bay | singapore | iv", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iv.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iv.jpg", date: "13th July 2024" },
-                { id: "fi8", title: "national day parade rehersal 2024 | marina bay | singapore | v", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | v.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | v.jpg", date: "20th July 2024" },
-                { id: "fi9", title: "national day parade rehersal 2025 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore.jpg", date: "21st June 2025" },
-                { id: "fi10", title: "national day parade rehersal 2025 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | ii.jpg", date: "5th July 2025" },
-                { id: "fi11", title: "national day parade rehersal 2025 | marina bay | singapore | iii", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | iii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | iii.jpg", date: "12th July 2025" }
-            ]
-        },
-        {
-            id: "spain",
-            title: "Spain",
-            description: "Barcelona and Catalonia",
-            coverImage: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain.jpg",
-            photos: [
-                { id: "sp1", title: "el masnou | catalonia | spain", url_medium: "images/albums/spain/el masnou | catalonia | spain.jpg", url_large: "images/albums/spain/el masnou | catalonia | spain.jpg", date: "28th July 2024" },
-                { id: "sp2", title: "casa alfonso | barcelona | spain", url_medium: "images/albums/spain/casa alfonso | barcelona | spain.jpg", url_large: "images/albums/spain/casa alfonso | barcelona | spain.jpg", date: "31st July 2024" },
-                { id: "sp3", title: "parc del guinardó | barcelona | spain", url_medium: "images/albums/spain/parc del guinardó | barcelona | spain.jpg", url_large: "images/albums/spain/parc del guinardó | barcelona | spain.jpg", date: "31st July 2024" },
-                { id: "sp4", title: "basílica i temple expiatori de la sagrada família | barcelona | spain ii", url_medium: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain ii.jpg", url_large: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain ii.jpg", date: "31st July 2024" },
-                { id: "sp5", title: "basílica i temple expiatori de la sagrada família | barcelona | spain", url_medium: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain.jpg", url_large: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain.jpg", date: "31st July 2024" }
-            ]
-        },
-        {
-            id: "chile",
-            title: "Chile",
-            description: "Santiago and beyond",
-            coverImage: "images/albums/chile/ernesto pinto lagarrigue | santiago | chile.jpg",
-            photos: [
-                { id: "ch1", title: "rosal | santiago | chile", url_medium: "images/albums/chile/rosal | santiago | chile.jpg", url_large: "images/albums/chile/rosal | santiago | chile.jpg", date: "23rd March 2019" },
-                { id: "ch2", title: "basilica de la merced | santiago | chile", url_medium: "images/albums/chile/basilica de la merced | santiago | chile.jpg", url_large: "images/albums/chile/basilica de la merced | santiago | chile.jpg", date: "1st April 2019" },
-                { id: "ch3", title: "catedral metropolitana de santiago de chile | santiago | chile", url_medium: "images/albums/chile/catedral metropolitana de santiago de chile | santiago | chile.jpg", url_large: "images/albums/chile/catedral metropolitana de santiago de chile | santiago | chile.jpg", date: "6th April 2019" },
-                { id: "ch4", title: "palacio de los tribunales de justicia | santiago | chile", url_medium: "images/albums/chile/palacio de los tribunales de justicia | santiago | chile.jpg", url_large: "images/albums/chile/palacio de los tribunales de justicia | santiago | chile.jpg", date: "6th April 2019" },
-                { id: "ch5", title: "dardignac | santiago | chile", url_medium: "images/albums/chile/dardignac | santiago | chile.jpg", url_large: "images/albums/chile/dardignac | santiago | chile.jpg", date: "7th April 2019" },
-                { id: "ch6", title: "dardignac | santiago | chile iii", url_medium: "images/albums/chile/dardignac | santiago | chile iii.jpg", url_large: "images/albums/chile/dardignac | santiago | chile iii.jpg", date: "7th April 2019" },
-                { id: "ch7", title: "santiago | chile", url_medium: "images/albums/chile/santiago | chile.jpg", url_large: "images/albums/chile/santiago | chile.jpg", date: "7th April 2019" },
-                { id: "ch8", title: "above | chile", url_medium: "images/albums/chile/above | chile.jpg", url_large: "images/albums/chile/above | chile.jpg", date: "14th April 2019" },
-                { id: "ch9", title: "dardignac | santiago | chile ii", url_medium: "images/albums/chile/dardignac | santiago | chile ii.jpg", url_large: "images/albums/chile/dardignac | santiago | chile ii.jpg", date: "27th April 2019" },
-                { id: "ch10", title: "ernesto pinto lagarrigue | santiago | chile", url_medium: "images/albums/chile/ernesto pinto lagarrigue | santiago | chile.jpg", url_large: "images/albums/chile/ernesto pinto lagarrigue | santiago | chile.jpg", date: "27th April 2019" }
-            ]
-        },
-        {
-            id: "malaysia",
-            title: "Malaysia",
-            description: "Kuala Lumpur and Johor",
-            coverImage: "images/albums/malaysia/forrest city | johor | malaysia ii.jpg",
-            photos: [
-                { id: "ma1", title: "petronas towers | kuala. lumpur | malaysia", url_medium: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia.jpg", url_large: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia.jpg", date: "16th February 2025" },
-                { id: "ma2", title: "petronas towers | kuala. lumpur | malaysia ii", url_medium: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia ii.jpg", url_large: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia ii.jpg", date: "16th February 2025" },
-                { id: "ma3", title: "clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2", url_medium: "images/albums/malaysia/clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2.jpg", url_large: "images/albums/malaysia/clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2.jpg", date: "17th February 2025" },
-                { id: "ma4", title: "forrest city | johor | malaysia", url_medium: "images/albums/malaysia/forrest city | johor | malaysia.jpg", url_large: "images/albums/malaysia/forrest city | johor | malaysia.jpg", date: "8th June 2025" },
-                { id: "ma5", title: "forrest city | johor | malaysia ii", url_medium: "images/albums/malaysia/forrest city | johor | malaysia ii.jpg", url_large: "images/albums/malaysia/forrest city | johor | malaysia ii.jpg", date: "18th October 2025" }
-            ]
-        },
-        {
-            id: "indonesia",
-            title: "Indonesia",
-            description: "Nusa Penida and Batam",
-            coverImage: "images/albums/indonesia/singapore strait | batam | indonesia.jpg",
-            photos: [
-                { id: "in1", title: "maruti beach club | nusa penida | indonesia", url_medium: "images/albums/indonesia/maruti beach club | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/maruti beach club | nusa penida | indonesia.jpg", date: "1st April 2023" },
-                { id: "in2", title: "nusa penida | indonesia", url_medium: "images/albums/indonesia/nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/nusa penida | indonesia.jpg", date: "1st April 2023" },
-                { id: "in3", title: "nusa penida | indonesia ii", url_medium: "images/albums/indonesia/nusa penida | indonesia ii.jpg", url_large: "images/albums/indonesia/nusa penida | indonesia ii.jpg", date: "1st April 2023" },
-                { id: "in4", title: "pura dalem bias mentig | nusa penida | indonesia", url_medium: "images/albums/indonesia/pura dalem bias mentig | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/pura dalem bias mentig | nusa penida | indonesia.jpg", date: "1st April 2023" },
-                { id: "in5", title: "toilet | nusa penida | indonesia", url_medium: "images/albums/indonesia/toilet | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/toilet | nusa penida | indonesia.jpg", date: "1st April 2023" },
-                { id: "in6", title: "singapore strait | batam | indonesia", url_medium: "images/albums/indonesia/singapore strait | batam | indonesia.jpg", url_large: "images/albums/indonesia/singapore strait | batam | indonesia.jpg", date: "8th July 2023" }
-            ]
-        },
-        {
             id: "bavaria",
             title: "Bavaria",
             description: "Bavaria, Germany",
-            coverImage: "images/albums/bavaria/wartenberg | germany iv.jpg",
+            coverImage: "images/albums/bavaria/thenn | germany ii.jpg",
             photos: [
                 { id: "ba1", title: "pfarrkirche mariae geburt | wartenberg | germany", url_medium: "images/albums/bavaria/pfarrkirche mariae geburt | wartenberg | germany.jpg", url_large: "images/albums/bavaria/pfarrkirche mariae geburt | wartenberg | germany.jpg", date: "18th June 2012" },
                 { id: "ba2", title: "thenn | germany i", url_medium: "images/albums/bavaria/thenn | germany i.jpg", url_large: "images/albums/bavaria/thenn | germany i.jpg", date: "24th September 2021" },
@@ -247,6 +132,122 @@ const CONFIG = {
                 { id: "ba14", title: "justizpalast | munich |germany", url_medium: "images/albums/bavaria/justizpalast | munich |germany.jpg", url_large: "images/albums/bavaria/justizpalast | munich |germany.jpg", date: "2nd August 2024" },
                 { id: "ba15", title: "dom zu unserer lieben frau | munich | germany", url_medium: "images/albums/bavaria/dom zu unserer lieben frau | munich | germany.jpg", url_large: "images/albums/bavaria/dom zu unserer lieben frau | munich | germany.jpg", date: "2nd August 2024" },
                 { id: "ba16", title: "wartenberg | germany iv", url_medium: "images/albums/bavaria/wartenberg | germany iv.jpg", url_large: "images/albums/bavaria/wartenberg | germany iv.jpg", date: "5th August 2024" }
+            ]
+        },
+        {
+            id: "alps",
+            title: "Alps",
+            description: "Alpine landscapes",
+            coverImage: "images/albums/alps/bremer hütte | tirol | austria.jpg",
+            photos: [
+                { id: "al1", title: "kalkwand | ilmspitze | tirol | austria", url_medium: "images/albums/alps/kalkwand | ilmspitze | tirol | austria.jpg", url_large: "images/albums/alps/kalkwand | ilmspitze | tirol | austria.jpg", date: "4th September 2021" },
+                { id: "al2", title: "bremer hütte | tirol | austria", url_medium: "images/albums/alps/bremer hütte | tirol | austria.jpg", url_large: "images/albums/alps/bremer hütte | tirol | austria.jpg", date: "5th September 2021" },
+                { id: "al3", title: "paradies | stubai | tirol | austria", url_medium: "images/albums/alps/paradies | stubai | tirol | austria.jpg", url_large: "images/albums/alps/paradies | stubai | tirol | austria.jpg", date: "5th September 2021" },
+                { id: "al4", title: "paradies | stubaier höhenweg | tirol | austria", url_medium: "images/albums/alps/paradies | stubaier höhenweg | tirol | austria.jpg", url_large: "images/albums/alps/paradies | stubaier höhenweg | tirol | austria.jpg", date: "5th September 2021" },
+                { id: "al5", title: "nürnberger hütte ii | tirol | austria", url_medium: "images/albums/alps/nürnberger hütte ii | tirol | austria.jpg", url_large: "images/albums/alps/nürnberger hütte ii | tirol | austria.jpg", date: "5th September 2021" },
+                { id: "al6", title: "nürnberger hütte | tirol | austria", url_medium: "images/albums/alps/nürnberger hütte | tirol | austria.jpg", url_large: "images/albums/alps/nürnberger hütte | tirol | austria.jpg", date: "5th September 2021" },
+                { id: "al7", title: "botzer | alto adige| italy", url_medium: "images/albums/alps/botzer | alto adige| italy.jpg", url_large: "images/albums/alps/botzer | alto adige| italy.jpg", date: "12th September 2021" },
+                { id: "al8", title: "sonnklarspitze | tirol | austria", url_medium: "images/albums/alps/sonnklarspitze | tirol | austria.jpg", url_large: "images/albums/alps/sonnklarspitze | tirol | austria.jpg", date: "13th September 2021" },
+                { id: "al9", title: "königssee | bavaria | germany", url_medium: "images/albums/alps/königssee | bavaria | germany.jpg", url_large: "images/albums/alps/königssee | bavaria | germany.jpg", date: "31st July 2023" },
+                { id: "al10", title: "königssee | bavaria | germany ii", url_medium: "images/albums/alps/königssee | bavaria | germany ii.jpg", url_large: "images/albums/alps/königssee | bavaria | germany ii.jpg", date: "31st July 2023" },
+                { id: "al11", title: "st. bartholomä | königssee | bavaria | germany", url_medium: "images/albums/alps/st. bartholomä | königssee | bavaria | germany.jpg", url_large: "images/albums/alps/st. bartholomä | königssee | bavaria | germany.jpg", date: "31st July 2023" }
+            ]
+        },
+        {
+            id: "fireworks",
+            title: "Fireworks",
+            description: "National Day celebrations",
+            coverImage: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore.jpg",
+            photos: [
+                { id: "fi1", title: "national day parade rehersal 2022 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore.jpg", date: "2nd July 2022" },
+                { id: "fi2", title: "national day parade rehersal 2022 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2022 | marina bay | singapore | ii.jpg", date: "2nd July 2022" },
+                { id: "fi3", title: "national day parade rehersal 2023 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2023 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2023 | marina bay | singapore.jpg", date: "22nd June 2024" },
+                { id: "fi4", title: "national day parade rehersal 2024 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore.jpg", date: "29th June 2024" },
+                { id: "fi5", title: "national day parade rehersal 2024 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | ii.jpg", date: "13th July 2024" },
+                { id: "fi6", title: "national day parade rehersal 2024 | marina bay | singapore | iii", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iii.jpg", date: "13th July 2024" },
+                { id: "fi7", title: "national day parade rehersal 2024 | marina bay | singapore | iv", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iv.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | iv.jpg", date: "13th July 2024" },
+                { id: "fi8", title: "national day parade rehersal 2024 | marina bay | singapore | v", url_medium: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | v.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2024 | marina bay | singapore | v.jpg", date: "20th July 2024" },
+                { id: "fi9", title: "national day parade rehersal 2025 | marina bay | singapore", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore.jpg", date: "21st June 2025" },
+                { id: "fi10", title: "national day parade rehersal 2025 | marina bay | singapore | ii", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | ii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | ii.jpg", date: "5th July 2025" },
+                { id: "fi11", title: "national day parade rehersal 2025 | marina bay | singapore | iii", url_medium: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | iii.jpg", url_large: "images/albums/fireworks/national day parade rehersal 2025 | marina bay | singapore | iii.jpg", date: "12th July 2025" }
+            ]
+        },
+        {
+            id: "nepal",
+            title: "Nepal",
+            description: "Himalayan adventures",
+            coverImage: "images/albums/nepal/everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg",
+            photos: [
+                { id: "ne1", title: "namche bazar | solokhumbu | nepal", url_medium: "images/albums/nepal/namche bazar | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/namche bazar | solokhumbu | nepal.jpg", date: "21st October 2000" },
+                { id: "ne2", title: "lothse - ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/lothse - ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/lothse - ama dablam | solokhumbu | nepal.jpg", date: "22nd October 2000" },
+                { id: "ne3", title: "tengboche | solokhumbu | nepal", url_medium: "images/albums/nepal/tengboche | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/tengboche | solokhumbu | nepal.jpg", date: "23rd October 2000" },
+                { id: "ne4", title: "ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/ama dablam | solokhumbu | nepal.jpg", date: "23rd October 2000" },
+                { id: "ne5", title: "base camp | mount everest | solokhumbu | nepal", url_medium: "images/albums/nepal/base camp | mount everest | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/base camp | mount everest | solokhumbu | nepal.jpg", date: "30th October 2000" },
+                { id: "ne6", title: "everst | lothse | nuptse | solokhumbu | nepal", url_medium: "images/albums/nepal/everst | lothse | nuptse | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/everst | lothse | nuptse | solokhumbu | nepal.jpg", date: "30th October 2000" },
+                { id: "ne7", title: "khumbu glacier | ama dablam | solokhumbu | nepal", url_medium: "images/albums/nepal/khumbu glacier | ama dablam | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/khumbu glacier | ama dablam | solokhumbu | nepal.jpg", date: "30th October 2000" },
+                { id: "ne8", title: "ama dablam ii | solokhumbu | nepal", url_medium: "images/albums/nepal/ama dablam ii | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/ama dablam ii | solokhumbu | nepal.jpg", date: "30th October 2000" },
+                { id: "ne9", title: "taboche | solukhumbu | nepal", url_medium: "images/albums/nepal/taboche | solukhumbu | nepal.jpg", url_large: "images/albums/nepal/taboche | solukhumbu | nepal.jpg", date: "3rd November 2000" },
+                { id: "ne10", title: "everst - nuptse - lhotse - makalu | solokhumbu | nepal", url_medium: "images/albums/nepal/everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/everst - nuptse - lhotse - makalu | solokhumbu | nepal.jpg", date: "3rd November 2000" },
+                { id: "ne11", title: "thakiri choling gomba | phortse | solokhumbu | nepal", url_medium: "images/albums/nepal/thakiri choling gomba | phortse | solokhumbu | nepal.jpg", url_large: "images/albums/nepal/thakiri choling gomba | phortse | solokhumbu | nepal.jpg", date: "7th November 2000" }
+            ]
+        },
+        {
+            id: "malaysia",
+            title: "Malaysia",
+            description: "Kuala Lumpur and Johor",
+            coverImage: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia.jpg",
+            photos: [
+                { id: "ma1", title: "petronas towers | kuala. lumpur | malaysia", url_medium: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia.jpg", url_large: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia.jpg", date: "16th February 2025" },
+                { id: "ma2", title: "petronas towers | kuala. lumpur | malaysia ii", url_medium: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia ii.jpg", url_large: "images/albums/malaysia/petronas towers | kuala. lumpur | malaysia ii.jpg", date: "16th February 2025" },
+                { id: "ma3", title: "clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2", url_medium: "images/albums/malaysia/clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2.jpg", url_large: "images/albums/malaysia/clock tower | sultan abdul samad building | kuala lumpur | malaysia-Enhanced-NR-2.jpg", date: "17th February 2025" },
+                { id: "ma4", title: "forrest city | johor | malaysia", url_medium: "images/albums/malaysia/forrest city | johor | malaysia.jpg", url_large: "images/albums/malaysia/forrest city | johor | malaysia.jpg", date: "8th June 2025" },
+                { id: "ma5", title: "forrest city | johor | malaysia ii", url_medium: "images/albums/malaysia/forrest city | johor | malaysia ii.jpg", url_large: "images/albums/malaysia/forrest city | johor | malaysia ii.jpg", date: "18th October 2025" }
+            ]
+        },
+        {
+            id: "spain",
+            title: "Spain",
+            description: "Barcelona and Catalonia",
+            coverImage: "images/albums/spain/el masnou | catalonia | spain.jpg",
+            photos: [
+                { id: "sp1", title: "el masnou | catalonia | spain", url_medium: "images/albums/spain/el masnou | catalonia | spain.jpg", url_large: "images/albums/spain/el masnou | catalonia | spain.jpg", date: "28th July 2024" },
+                { id: "sp2", title: "casa alfonso | barcelona | spain", url_medium: "images/albums/spain/casa alfonso | barcelona | spain.jpg", url_large: "images/albums/spain/casa alfonso | barcelona | spain.jpg", date: "31st July 2024" },
+                { id: "sp3", title: "parc del guinardó | barcelona | spain", url_medium: "images/albums/spain/parc del guinardó | barcelona | spain.jpg", url_large: "images/albums/spain/parc del guinardó | barcelona | spain.jpg", date: "31st July 2024" },
+                { id: "sp4", title: "basílica i temple expiatori de la sagrada família | barcelona | spain ii", url_medium: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain ii.jpg", url_large: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain ii.jpg", date: "31st July 2024" },
+                { id: "sp5", title: "basílica i temple expiatori de la sagrada família | barcelona | spain", url_medium: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain.jpg", url_large: "images/albums/spain/basílica i temple expiatori de la sagrada família | barcelona | spain.jpg", date: "31st July 2024" }
+            ]
+        },
+        {
+            id: "indonesia",
+            title: "Indonesia",
+            description: "Nusa Penida and Bali",
+            coverImage: "images/albums/indonesia/gunung agung | bali | indonesia.jpg",
+            photos: [
+                { id: "in1", title: "gunung agung | bali | indonesia", url_medium: "images/albums/indonesia/gunung agung | bali | indonesia.jpg", url_large: "images/albums/indonesia/gunung agung | bali | indonesia.jpg", date: "1st April 2023" },
+                { id: "in2", title: "maruti beach club | nusa penida | indonesia", url_medium: "images/albums/indonesia/maruti beach club | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/maruti beach club | nusa penida | indonesia.jpg", date: "1st April 2023" },
+                { id: "in3", title: "nusa penida | indonesia", url_medium: "images/albums/indonesia/nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/nusa penida | indonesia.jpg", date: "1st April 2023" },
+                { id: "in4", title: "nusa penida | indonesia ii", url_medium: "images/albums/indonesia/nusa penida | indonesia ii.jpg", url_large: "images/albums/indonesia/nusa penida | indonesia ii.jpg", date: "1st April 2023" },
+                { id: "in5", title: "pura dalem bias mentig | nusa penida | indonesia", url_medium: "images/albums/indonesia/pura dalem bias mentig | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/pura dalem bias mentig | nusa penida | indonesia.jpg", date: "1st April 2023" },
+                { id: "in6", title: "toilet | nusa penida | indonesia", url_medium: "images/albums/indonesia/toilet | nusa penida | indonesia.jpg", url_large: "images/albums/indonesia/toilet | nusa penida | indonesia.jpg", date: "1st April 2023" },
+                { id: "in7", title: "singapore strait | batam | indonesia", url_medium: "images/albums/indonesia/singapore strait | batam | indonesia.jpg", url_large: "images/albums/indonesia/singapore strait | batam | indonesia.jpg", date: "8th July 2023" }
+            ]
+        },
+        {
+            id: "chile",
+            title: "Chile",
+            description: "Santiago and beyond",
+            coverImage: "images/albums/chile/rosal | santiago | chile.jpg",
+            photos: [
+                { id: "ch1", title: "rosal | santiago | chile", url_medium: "images/albums/chile/rosal | santiago | chile.jpg", url_large: "images/albums/chile/rosal | santiago | chile.jpg", date: "23rd March 2019" },
+                { id: "ch2", title: "basilica de la merced | santiago | chile", url_medium: "images/albums/chile/basilica de la merced | santiago | chile.jpg", url_large: "images/albums/chile/basilica de la merced | santiago | chile.jpg", date: "1st April 2019" },
+                { id: "ch3", title: "catedral metropolitana de santiago de chile | santiago | chile", url_medium: "images/albums/chile/catedral metropolitana de santiago de chile | santiago | chile.jpg", url_large: "images/albums/chile/catedral metropolitana de santiago de chile | santiago | chile.jpg", date: "6th April 2019" },
+                { id: "ch4", title: "palacio de los tribunales de justicia | santiago | chile", url_medium: "images/albums/chile/palacio de los tribunales de justicia | santiago | chile.jpg", url_large: "images/albums/chile/palacio de los tribunales de justicia | santiago | chile.jpg", date: "6th April 2019" },
+                { id: "ch5", title: "dardignac | santiago | chile", url_medium: "images/albums/chile/dardignac | santiago | chile.jpg", url_large: "images/albums/chile/dardignac | santiago | chile.jpg", date: "7th April 2019" },
+                { id: "ch6", title: "dardignac | santiago | chile iii", url_medium: "images/albums/chile/dardignac | santiago | chile iii.jpg", url_large: "images/albums/chile/dardignac | santiago | chile iii.jpg", date: "7th April 2019" },
+                { id: "ch7", title: "santiago | chile", url_medium: "images/albums/chile/santiago | chile.jpg", url_large: "images/albums/chile/santiago | chile.jpg", date: "7th April 2019" },
+                { id: "ch8", title: "above | chile", url_medium: "images/albums/chile/above | chile.jpg", url_large: "images/albums/chile/above | chile.jpg", date: "14th April 2019" },
+                { id: "ch9", title: "dardignac | santiago | chile ii", url_medium: "images/albums/chile/dardignac | santiago | chile ii.jpg", url_large: "images/albums/chile/dardignac | santiago | chile ii.jpg", date: "27th April 2019" },
+                { id: "ch10", title: "ernesto pinto lagarrigue | santiago | chile", url_medium: "images/albums/chile/ernesto pinto lagarrigue | santiago | chile.jpg", url_large: "images/albums/chile/ernesto pinto lagarrigue | santiago | chile.jpg", date: "27th April 2019" }
             ]
         }
     ]
