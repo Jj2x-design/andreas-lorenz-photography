@@ -21,10 +21,12 @@ const CONFIG = {
                 { id: "me8", title: "candidplatz | munich | germany", url_medium: "images/albums/metro/candidplatz | munich | germany.jpg", url_large: "images/albums/metro/candidplatz | munich | germany.jpg", date: "2nd August 2024" },
                 { id: "me9", title: "kreilerstrasse | munich | germany", url_medium: "images/albums/metro/kreilerstrasse | munich | germany.jpg", url_large: "images/albums/metro/kreilerstrasse | munich | germany.jpg", date: "2nd August 2024" },
                 { id: "me10", title: "conlay | kuala lumpur | malaysia", url_medium: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", url_large: "images/albums/metro/conlay | kuala lumpur | malaysia.jpg", date: "18th February 2025" },
-                { id: "me11", title: "olympia einkaufszentrum | munich | germany", url_medium: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", url_large: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me12", title: "moosach | munich | germany", url_medium: "images/albums/metro/moosach | munich | germany.jpg", url_large: "images/albums/metro/moosach | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me13", title: "u-bahn | georg-brauchle-ring | munich | germany", url_medium: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", date: "31st July 2025" },
-                { id: "me14", title: "u-bahn | sendlinger tor | munich | germany", url_medium: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", date: "31st July 2025" }
+                { id: "me11", title: "tuas link | singapore", url_medium: "images/albums/metro/tuas link | singapore.jpg", url_large: "images/albums/metro/tuas link | singapore.jpg", date: "8th June 2025" },
+                { id: "me12", title: "olympia einkaufszentrum | munich | germany", url_medium: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", url_large: "images/albums/metro/olympia einkaufszentrum | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me13", title: "moosach | munich | germany", url_medium: "images/albums/metro/moosach | munich | germany.jpg", url_large: "images/albums/metro/moosach | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me14", title: "u-bahn | georg-brauchle-ring | munich | germany", url_medium: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | georg-brauchle-ring | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me15", title: "u-bahn | sendlinger tor | munich | germany", url_medium: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", url_large: "images/albums/metro/u-bahn | sendlinger tor | munich | germany.jpg", date: "31st July 2025" },
+                { id: "me16", title: "caldecot | singapore", url_medium: "images/albums/metro/caldecot | singapore.jpg", url_large: "images/albums/metro/caldecot | singapore.jpg", date: "14th March 2026" }
             ]
         },
         {
@@ -66,7 +68,8 @@ const CONFIG = {
                 { id: "si31", title: "supertree grove | gardens by the bay | singapore", url_medium: "images/albums/singapore/supertree grove | gardens by the bay | singapore.jpg", url_large: "images/albums/singapore/supertree grove | gardens by the bay | singapore.jpg", date: "31st August 2025" },
                 { id: "si32", title: "raffles marina lighthouse | tuas | singapore", url_medium: "images/albums/singapore/raffles marina lighthouse | tuas | singapore.jpg", url_large: "images/albums/singapore/raffles marina lighthouse | tuas | singapore.jpg", date: "18th October 2025" },
                 { id: "si33", title: "singapore flyer | marina bay | singapore", url_medium: "images/albums/singapore/singapore flyer | marina bay | singapore.jpg", url_large: "images/albums/singapore/singapore flyer | marina bay | singapore.jpg", date: "30th November 2025" },
-                { id: "si34", title: "changi control tower | changi | singapore", url_medium: "images/albums/singapore/changi control tower | changi | singapore.jpg", url_large: "images/albums/singapore/changi control tower | changi | singapore.jpg", date: "14th February 2026" }
+                { id: "si34", title: "changi control tower | changi | singapore", url_medium: "images/albums/singapore/changi control tower | changi | singapore.jpg", url_large: "images/albums/singapore/changi control tower | changi | singapore.jpg", date: "14th February 2026" },
+                { id: "si35", title: "disney cruise themed firewors | marina bay | singapore", url_medium: "images/albums/singapore/disney cruise themed firewors | marina bay | singapore.jpg", url_large: "images/albums/singapore/disney cruise themed firewors | marina bay | singapore.jpg", date: "14th March 2026" }
             ]
         },
         {
