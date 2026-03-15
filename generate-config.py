@@ -106,8 +106,8 @@ def scan_album(album_id):
             '_dt': dt,
         })
 
-    # Sort by date (None dates go last, then maintain filename order)
-    photos.sort(key=lambda p: (p['_dt'] is None, p['_dt'] or datetime.min))
+    # Sort by date descending (newest first, None dates go last)
+    photos.sort(key=lambda p: (p['_dt'] is None, -(p['_dt'].timestamp() if p['_dt'] else 0)))
 
     # Assign IDs and remove temp sort key
     prefix = album_id[:2]
